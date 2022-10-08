@@ -2,6 +2,7 @@ package com.noah2021.ratelimiter;
 
 import com.noah2021.ratelimiter.alg.FixedTimeWindowRateLimiter;
 import com.noah2021.ratelimiter.alg.RateLimitAlg;
+import com.noah2021.ratelimiter.error.RateLimiterException;
 import com.noah2021.ratelimiter.rule.ApiLimit;
 import com.noah2021.ratelimiter.rule.RateLimiterRule;
 import com.noah2021.ratelimiter.rule.RuleConfig;
@@ -46,8 +47,8 @@ public class RateLimiter {
                 }
             }
         }
-        // 将限流规则构建成支持快速查找的数据结构RateLimitRule
-        this.rule = new RateLimiterRule(ruleConfig);
+        // TODO:将限流规则构建成支持快速查找的数据结构RateLimitRule
+//        this.rule = new RateLimiterRule(ruleConfig);
     }
 
     /**
@@ -57,7 +58,7 @@ public class RateLimiter {
      * @return boolean
      * @throws InterruptedException
      */
-    public boolean limit(String appId, String url) {
+    public boolean limit(String appId, String url) throws RateLimiterException {
         ApiLimit apiLimit = rule.getLimit(appId, url);
         if (apiLimit == null) {
             return true;

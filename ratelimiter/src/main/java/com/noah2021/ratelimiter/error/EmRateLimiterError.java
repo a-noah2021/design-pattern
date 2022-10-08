@@ -8,10 +8,14 @@ package com.noah2021.ratelimiter.error;
  **/
 public enum EmRateLimiterError implements CommonError {
 
+    GENERIC_ERR(10000,"接口通用异常"),
     RPC_TIMEOUT(10001,"调用外部接口超时"),
     FILE_LOAD_FAIL(10002, "限流规则读取失败"),
-    API_THREAD_FULL(10003,"调用接口线程已满"),
-    SERVER_HIGH_LOAD(10004,"服务器负载过高")
+    INVALID_URL(10003, "无效URL"),
+    INTERNAL_ERR(10003, "内部错误"),
+    CONFIGURATION_RESOLVE_ERR(10004, "配置解析异常"),
+    API_THREAD_FULL(10005,"调用接口线程已满"),
+    SERVER_HIGH_LOAD(10006,"服务器负载过高")
     ;
 
     EmRateLimiterError(int errCode,String errMsg){

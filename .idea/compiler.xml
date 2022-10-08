@@ -12,8 +12,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="design-pattern" target="1.8" />
-      <module name="ratelimiter" target="1.8" />
+      <module name="design-pattern" target="1.9" />
+      <module name="ratelimiter" target="1.9" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.noah2021.ratelimiter.alg;
 
 import com.google.common.base.Stopwatch;
+import com.noah2021.ratelimiter.error.RateLimiterException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -32,5 +33,5 @@ public abstract class RateLimitAlg {
         this.stopwatch = stopwatch;
     }
 
-    public abstract boolean tryAcquire();
+    public abstract boolean tryAcquire() throws RateLimiterException;
 }

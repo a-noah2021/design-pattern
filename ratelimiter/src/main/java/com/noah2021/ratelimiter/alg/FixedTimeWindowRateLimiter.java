@@ -1,6 +1,8 @@
 package com.noah2021.ratelimiter.alg;
 
 import com.google.common.base.Stopwatch;
+import com.noah2021.ratelimiter.error.EmRateLimiterError;
+import com.noah2021.ratelimiter.error.RateLimiterException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -26,7 +28,7 @@ public class FixedTimeWindowRateLimiter extends RateLimitAlg {
         this.lock = new ReentrantLock();
     }
 
-    public boolean tryAcquire() {
+    public boolean tryAcquire() throws RateLimiterException {
         int addedCount = count.incrementAndGet();
         if (addedCount <= limit) {
             return true;
@@ -36,17 +38,18 @@ public class FixedTimeWindowRateLimiter extends RateLimitAlg {
                 try {
                     if (stopwatch.elapsed(TimeUnit.MILLISECONDS) > TimeUnit.SECONDS.toMillis(1)) {
                         count.set(0);
-                        stopwatch.reset().start();
+                        stopwatch.reset();
                     }
                     addedCount = count.incrementAndGet();
                     return addedCount <= limit;
                 } finally {
                     lock.unlock();
                 }
+            } else {
+                throw new RateLimiterException(EmRateLimiterError.INTERNAL_ERR, "tryAcquire() wait lock too long:" + TRY_LOCK_TIMEOUT + "ms");
             }
         } catch (InterruptedException e) {
-            log.error("tryAcquire() is interrupted by lock-time-out.", e);
+            throw new RateLimiterException(EmRateLimiterError.INTERNAL_ERR, "tryAcquire() is interrupted by lock-time-out.");
         }
-        return false;
     }
 }
