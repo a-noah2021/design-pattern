@@ -7,13 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="design-pattern" />
         <module name="ratelimiter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="design-pattern" target="1.9" />
-      <module name="ratelimiter" target="1.9" />
+      <module name="design-pattern" target="1.8" />
+      <module name="ratelimiter" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

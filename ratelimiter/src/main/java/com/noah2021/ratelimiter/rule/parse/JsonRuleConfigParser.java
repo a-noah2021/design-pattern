@@ -8,7 +8,7 @@ import java.io.InputStream;
  * @program: design-pattern
  * @description:
  * @author: noah2021
- * @date: 2022-10-07 22:48
+ * @date: 2022-10-06 22:43
  **/
 public class JsonRuleConfigParser implements RuleConfigParser{
     @Override

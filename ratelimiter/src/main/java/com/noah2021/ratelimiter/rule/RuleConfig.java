@@ -1,13 +1,16 @@
 package com.noah2021.ratelimiter.rule;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
  * @program: design-pattern
  * @description:
  * @author: noah2021
- * @date: 2022-10-07 14:54
+ * @date: 2022-10-07 15:15
  **/
+@Data
 public class RuleConfig {
 
     private List<AppRuleConfig> configs;

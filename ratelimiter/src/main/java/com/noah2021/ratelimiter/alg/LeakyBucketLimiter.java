@@ -1,5 +1,6 @@
 package com.noah2021.ratelimiter.alg;
 
+import com.noah2021.ratelimiter.error.RateLimiterException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
@@ -19,7 +20,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * @date: 2022-10-07 23:12
  **/
 @Slf4j
-public class LeakyBucketLimiter extends RateLimitAlg {
+public class LeakyBucketLimiter implements RateLimitAlg {
+
     //桶的大小
     private int capacity;
 
@@ -29,9 +31,7 @@ public class LeakyBucketLimiter extends RateLimitAlg {
     //桶
     private BlockingQueue<Thread> bucket;
 
-
     public LeakyBucketLimiter(int capacity, double rate) {
-        super(1);
         this.capacity = capacity;
         bucket = new LinkedBlockingQueue<>(capacity);
         double period = SECONDS.toMicros(1L) / rate;
@@ -45,28 +45,14 @@ public class LeakyBucketLimiter extends RateLimitAlg {
         }, 0, (long) period, TimeUnit.MICROSECONDS);
     }
 
-
+    @Override
     public boolean tryAcquire() {
         try {
-            bucket.put(currentThread());
+            bucket.put(Thread.currentThread());
             LockSupport.park();
         } catch (InterruptedException e) {
             log.error("failed to save bucket，be interrupted");
         }
         return true;
     }
-
-    public static void main(String[] args) {
-        // 定义一个 RateLimiter ，单位时间（默认为秒）的设置为 0.5【访问速率为 0.5 / 秒】
-        RateLimitAlg leakyBucketLimiter = new LeakyBucketLimiter(10, 1);
-        // RateLimiter rateLimiter = RateLimiter.create(1);
-        //private static RateLimiter rateLimiter = new T
-        for (; ; ) {
-            // 在访问该方法之前首先要进行 RateLimiter 的获取，返回值为实际的获取等待开销时间
-            leakyBucketLimiter.tryAcquire();
-            System.out.println(currentThread() + ": elapsed seconds " + LocalDateTime.now());
-        }
-    }
-
-
 }

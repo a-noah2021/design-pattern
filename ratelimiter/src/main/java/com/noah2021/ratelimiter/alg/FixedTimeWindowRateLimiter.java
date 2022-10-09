@@ -6,6 +6,8 @@ import com.noah2021.ratelimiter.error.RateLimiterException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -15,19 +17,25 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date: 2022-10-07 23:10
  **/
 @Slf4j
-public class FixedTimeWindowRateLimiter extends RateLimitAlg {
+public class FixedTimeWindowRateLimiter implements RateLimitAlg {
+
+    private static final long TRY_LOCK_TIMEOUT = 200L;
+    private Stopwatch stopwatch;
+    private AtomicInteger count = new AtomicInteger(0);
+    private int limit;
+    private Lock lock;
 
     public FixedTimeWindowRateLimiter(int limit) {
         this(limit, Stopwatch.createStarted());
     }
 
     public FixedTimeWindowRateLimiter(int limit, Stopwatch stopwatch) {
-        super(limit);
         this.limit = limit;
         this.stopwatch = stopwatch;
         this.lock = new ReentrantLock();
     }
 
+    @Override
     public boolean tryAcquire() throws RateLimiterException {
         int addedCount = count.incrementAndGet();
         if (addedCount <= limit) {

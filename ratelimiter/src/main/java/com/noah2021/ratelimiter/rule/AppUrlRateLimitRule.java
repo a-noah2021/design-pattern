@@ -78,9 +78,9 @@ public class AppUrlRateLimitRule {
     /**
      * Get limit info for the url path.
      * <p>
-     * TODO(zheng): validate urlPath first.
-     * TODO(zheng): handle the case: children has multiply matched dir patterns.
-     * TODO(zheng): cache Regex Pattern for performance
+     * TODO: validate urlPath first.
+     * TODO: handle the case: children has multiply matched dir patterns.
+     * TODO: cache Regex Pattern for performance
      *
      * @param urlPath urlPath path
      * @return the limit info for the urlPath.

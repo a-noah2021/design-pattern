@@ -1,7 +1,6 @@
 package com.noah2021.ratelimiter.rule;
 
 import com.noah2021.ratelimiter.error.RateLimiterException;
-import com.noah2021.ratelimiter.rule.source.UniformRuleConfigMapping;
 
 import java.util.List;
 
@@ -15,7 +14,6 @@ public interface RateLimiterRule {
 
     /**
      * get limit info of one url.
-     *
      * @param appId
      * @param api
      * @return
@@ -25,7 +23,6 @@ public interface RateLimiterRule {
 
     /**
      * add one limit for one app.
-     *
      * @param appId
      * @param apiLimit
      * @throws RateLimiterException
@@ -34,7 +31,6 @@ public interface RateLimiterRule {
 
     /**
      * add limits for one app.
-     *
      * @param limits
      * @throws RateLimiterException
      */
@@ -42,15 +38,15 @@ public interface RateLimiterRule {
 
     /**
      * override old rule.
-     *
-     * @param uniformRuleConfigMapping
+     * @param ruleConfig
+     * @throws RateLimiterException
      */
-    void rebuildRule(UniformRuleConfigMapping uniformRuleConfigMapping) throws RateLimiterException;
+    void rebuildRule(RuleConfig ruleConfig) throws RateLimiterException;
 
     /**
      * add rule into the existing rule.
-     *
-     * @param uniformRuleConfigMapping
+     * @param ruleConfig
+     * @throws RateLimiterException
      */
-    void addRule(UniformRuleConfigMapping uniformRuleConfigMapping) throws RateLimiterException;
+    void addRule(RuleConfig ruleConfig) throws RateLimiterException;
 }

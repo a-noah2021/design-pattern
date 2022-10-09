@@ -2,7 +2,6 @@ package com.noah2021.ratelimiter.rule;
 
 import com.noah2021.ratelimiter.error.EmRateLimiterError;
 import com.noah2021.ratelimiter.error.RateLimiterException;
-import com.noah2021.ratelimiter.rule.source.UniformRuleConfigMapping;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -21,20 +20,24 @@ public class UrlRateLimitRule implements RateLimiterRule{
     private volatile ConcurrentHashMap<String, AppUrlRateLimitRule> limitRules =
             new ConcurrentHashMap<>();
 
-    public UrlRateLimitRule() {
+    public UrlRateLimitRule(){}
+
+    public UrlRateLimitRule(RuleConfig ruleConfig) throws RateLimiterException {
+        addRule(ruleConfig);
     }
 
+
     @Override
-    public void addRule(UniformRuleConfigMapping uniformRuleConfigMapping) throws RateLimiterException {
-        if (uniformRuleConfigMapping == null) {
+    public void addRule(RuleConfig ruleConfig) throws RateLimiterException {
+        if (ruleConfig == null) {
             return;
         }
-        List<UniformRuleConfigMapping.UniformRuleConfig> uniformRuleConfigs =
-                uniformRuleConfigMapping.getConfigs();
+        List<AppRuleConfig> appRuleConfigs =
+                ruleConfig.getConfigs();
         try {
-            for (UniformRuleConfigMapping.UniformRuleConfig uniformRuleConfig : uniformRuleConfigs) {
-                String appId = uniformRuleConfig.getAppId();
-                addLimits(appId, uniformRuleConfig.getLimits());
+            for (AppRuleConfig appRuleConfig : appRuleConfigs) {
+                String appId = appRuleConfig.getAppId();
+                addLimits(appId, appRuleConfig.getLimits());
             }
         } catch (RateLimiterException e) {
             throw new RateLimiterException(EmRateLimiterError.CONFIGURATION_RESOLVE_ERR,"rule configuration is invalid: "+e);
@@ -84,16 +87,16 @@ public class UrlRateLimitRule implements RateLimiterRule{
     }
 
     @Override
-    public void rebuildRule(UniformRuleConfigMapping uniformRuleConfigMapping) throws RateLimiterException {
+    public void rebuildRule(RuleConfig ruleConfig) throws RateLimiterException {
         ConcurrentHashMap<String, AppUrlRateLimitRule> newLimitRules = new ConcurrentHashMap<>();
-        List<UniformRuleConfigMapping.UniformRuleConfig> uniformRuleConfigs =
-                uniformRuleConfigMapping.getConfigs();
-        for (UniformRuleConfigMapping.UniformRuleConfig uniformRuleConfig : uniformRuleConfigs) {
-            String appId = uniformRuleConfig.getAppId();
+        List<AppRuleConfig> appRuleConfigs =
+                ruleConfig.getConfigs();
+        for (AppRuleConfig appRuleConfig : appRuleConfigs) {
+            String appId = appRuleConfig.getAppId();
             AppUrlRateLimitRule appUrlRateLimitRule = new AppUrlRateLimitRule();
             newLimitRules.put(appId, appUrlRateLimitRule);
             try {
-                for (ApiLimit apiLimit : uniformRuleConfig.getLimits()) {
+                for (ApiLimit apiLimit : appRuleConfig.getLimits()) {
                     appUrlRateLimitRule.addLimitInfo(apiLimit);
                 }
             } catch (RateLimiterException e) {

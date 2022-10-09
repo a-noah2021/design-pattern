@@ -1,13 +1,16 @@
 package com.noah2021.ratelimiter.rule;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
  * @program: design-pattern
  * @description:
  * @author: noah2021
- * @date: 2022-10-07 21:30
+ * @date: 2022-10-06 15:05
  **/
+@Data
 public class AppRuleConfig {
 
     private String appId;
@@ -18,22 +21,6 @@ public class AppRuleConfig {
 
     public AppRuleConfig(String appId, List<ApiLimit> limits) {
         this.appId = appId;
-        this.limits = limits;
-    }
-
-    public String getAppId() {
-        return appId;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public List<ApiLimit> getLimits() {
-        return limits;
-    }
-
-    public void setLimits(List<ApiLimit> limits) {
         this.limits = limits;
     }
 }

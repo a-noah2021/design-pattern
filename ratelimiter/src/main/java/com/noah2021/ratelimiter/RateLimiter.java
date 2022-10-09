@@ -6,8 +6,8 @@ import com.noah2021.ratelimiter.error.RateLimiterException;
 import com.noah2021.ratelimiter.rule.ApiLimit;
 import com.noah2021.ratelimiter.rule.RateLimiterRule;
 import com.noah2021.ratelimiter.rule.RuleConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.noah2021.ratelimiter.rule.UrlRateLimitRule;
+import lombok.extern.slf4j.Slf4j;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
@@ -20,15 +20,14 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author: noah2021
  * @date: 2022-10-06 14:51
  **/
+@Slf4j
 public class RateLimiter {
-
-    private static final Logger log = LoggerFactory.getLogger(RateLimiter.class);
 
     private ConcurrentHashMap<String, RateLimitAlg> counters = new ConcurrentHashMap<>();
 
     private RateLimiterRule rule;
 
-    public RateLimiter() {
+    public RateLimiter() throws RateLimiterException {
         // 读取配置文件ratelimiter-rule.yaml然后封装进RuleConfig
         InputStream in = null;
         RuleConfig ruleConfig = null;
@@ -47,8 +46,8 @@ public class RateLimiter {
                 }
             }
         }
-        // TODO:将限流规则构建成支持快速查找的数据结构RateLimitRule
-//        this.rule = new RateLimiterRule(ruleConfig);
+        //将限流规则构建成支持快速查找的数据结构RateLimitRule
+        this.rule = new UrlRateLimitRule(ruleConfig);
     }
 
     /**

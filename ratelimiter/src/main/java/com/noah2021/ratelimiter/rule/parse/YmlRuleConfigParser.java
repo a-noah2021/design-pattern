@@ -8,7 +8,7 @@ import java.io.InputStream;
  * @program: design-pattern
  * @description:
  * @author: noah2021
- * @date: 2022-10-08 06:55
+ * @date: 2022-10-06 22:52
  **/
 public class YmlRuleConfigParser implements RuleConfigParser{
     @Override

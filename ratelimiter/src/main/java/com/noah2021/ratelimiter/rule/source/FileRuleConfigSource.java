@@ -5,9 +5,7 @@ import com.noah2021.ratelimiter.rule.parse.JsonRuleConfigParser;
 import com.noah2021.ratelimiter.rule.parse.RuleConfigParser;
 import com.noah2021.ratelimiter.rule.parse.YamlRuleConfigParser;
 import com.noah2021.ratelimiter.rule.parse.YmlRuleConfigParser;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -17,11 +15,10 @@ import java.util.Map;
  * @program: design-pattern
  * @description:
  * @author: noah2021
- * @date: 2022-10-07 22:39
+ * @date: 2022-10-06 23:29
  **/
-
+@Slf4j
 public class FileRuleConfigSource implements RuleConfigSource {
-    private static final Logger log = LoggerFactory.getLogger(FileRuleConfigSource.class);
 
     public static final String API_LIMIT_CONFIG_NAME = "ratelimiter-rule";
     public static final String YAML_EXTENSION = "yaml";
