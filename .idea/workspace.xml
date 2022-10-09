@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":white_check_mark: 修改测试用例" />
+    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":white_check_mark: 修改测试用例">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +271,7 @@
       <workItem from="1665131956857" duration="18200000" />
       <workItem from="1665236036470" duration="2668000" />
       <workItem from="1665318881045" duration="441000" />
-      <workItem from="1665326039427" duration="2867000" />
+      <workItem from="1665326039427" duration="3634000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles:搭建限流基础框架">
       <created>1665236234122</created>
@@ -297,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665328825343</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=":white_check_mark: 修改测试用例">
+      <created>1665329109875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665329109875</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
