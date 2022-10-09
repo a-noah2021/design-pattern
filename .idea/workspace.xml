@@ -4,44 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":ambulance:统一异常类型">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/ratelimiter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/ratelimiter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/RateLimiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/RateLimitAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/RateLimitAlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/ApiLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/ApiLimit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppRuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppRuleConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppUrlRateLimitRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppUrlRateLimitRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RateLimiterRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RateLimiterRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RuleConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/UrlRateLimitRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/UrlRateLimitRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/JsonRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/JsonRuleConfigParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/RuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/RuleConfigParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YamlRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YamlRuleConfigParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YmlRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YmlRuleConfigParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/FileRuleConfigSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/FileRuleConfigSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/RuleConfigSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/RuleConfigSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/UniformRuleConfigMapping.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/util/UrlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/util/UrlUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/RateLimiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/RateLimiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/RateLimitAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/RateLimitAlg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/ApiLimit.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/ApiLimit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/AppRuleConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/AppRuleConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/RateLimitRule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/RuleConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/RuleConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/datasource/FileRuleConfigSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/rule/datasource/RuleConfigSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/test-classes/FixedWindowAlgTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":white_check_mark: 修改测试用例" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +45,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="JUnit.RateLimiterAlgTest.fixedTimeWindowRateLimiterTest">
@@ -304,7 +267,7 @@
       <workItem from="1665131956857" duration="18200000" />
       <workItem from="1665236036470" duration="2668000" />
       <workItem from="1665318881045" duration="441000" />
-      <workItem from="1665326039427" duration="2589000" />
+      <workItem from="1665326039427" duration="2867000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles:搭建限流基础框架">
       <created>1665236234122</created>
@@ -327,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665238536008</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=":white_check_mark: 修改测试用例">
+      <created>1665328825343</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665328825343</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +318,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=":sparkles:搭建限流基础框架" />
     <MESSAGE value=":ambulance:统一异常类型" />
-    <option name="LAST_COMMIT_MESSAGE" value=":ambulance:统一异常类型" />
+    <MESSAGE value=":white_check_mark: 修改测试用例" />
+    <option name="LAST_COMMIT_MESSAGE" value=":white_check_mark: 修改测试用例" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
