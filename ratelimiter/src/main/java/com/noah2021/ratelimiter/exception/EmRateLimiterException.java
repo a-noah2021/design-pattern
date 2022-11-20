@@ -1,4 +1,4 @@
-package com.noah2021.ratelimiter.error;
+package com.noah2021.ratelimiter.exception;
 
 /**
  * @program: design-pattern
@@ -6,7 +6,7 @@ package com.noah2021.ratelimiter.error;
  * @author: noah2021
  * @date: 2022-10-08 00:23
  **/
-public enum EmRateLimiterError implements CommonError {
+public enum EmRateLimiterException implements CommonException {
 
     GENERIC_ERR(10000,"接口通用异常"),
     RPC_TIMEOUT(10001,"调用外部接口超时"),
@@ -18,7 +18,7 @@ public enum EmRateLimiterError implements CommonError {
     SERVER_HIGH_LOAD(10006,"服务器负载过高")
     ;
 
-    EmRateLimiterError(int errCode,String errMsg){
+    EmRateLimiterException(int errCode,String errMsg){
         this.errCode = errCode;
         this.errMsg = errMsg;
     }
@@ -43,7 +43,7 @@ public enum EmRateLimiterError implements CommonError {
     }
 
     @Override
-    public CommonError setErrMsg(String errMsg) {
+    public CommonException setErrMsg(String errMsg) {
         this.errMsg = errMsg;
         return this;
     }

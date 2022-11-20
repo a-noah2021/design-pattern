@@ -1,7 +1,8 @@
-package com.noah2021.ratelimiter.rule;
+package com.noah2021.ratelimiter.rule.handle;
 
-import com.noah2021.ratelimiter.error.EmRateLimiterError;
-import com.noah2021.ratelimiter.error.RateLimiterException;
+import com.noah2021.ratelimiter.exception.EmRateLimiterException;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
+import com.noah2021.ratelimiter.rule.entity.ApiLimit;
 import com.noah2021.ratelimiter.rule.util.UrlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -30,7 +31,7 @@ public class AppUrlRateLimitRule {
     public void addLimitInfo(ApiLimit apiLimit) throws RateLimiterException {
         String urlPath = apiLimit.getApi();
         if (!urlPath.startsWith("/")) {
-            throw new RateLimiterException(EmRateLimiterError.INVALID_URL, "the api is invalid: " + urlPath);
+            throw new RateLimiterException(EmRateLimiterException.INVALID_URL, "the api is invalid: " + urlPath);
         }
 
         if (apiLimit.getApi().equals("/")) {

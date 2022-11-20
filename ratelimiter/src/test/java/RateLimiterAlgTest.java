@@ -1,15 +1,13 @@
+import com.noah2021.ratelimiter.RateLimiter;
 import com.noah2021.ratelimiter.alg.FixedTimeWindowRateLimiter;
 import com.noah2021.ratelimiter.alg.LeakyBucketLimiter;
 import com.noah2021.ratelimiter.alg.RateLimitAlg;
-import com.noah2021.ratelimiter.error.RateLimiterException;
-import lombok.extern.slf4j.Slf4j;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
-
-import static java.lang.Thread.currentThread;
 
 /**
  * @program: design-pattern
@@ -34,6 +32,15 @@ public class RateLimiterAlgTest {
         while (true) {
             leakyBucketLimiter.tryAcquire();
             System.out.println(Thread.currentThread() + ": elapsed seconds " + LocalDateTime.now());
+        }
+    }
+
+    @Test
+    public void rateLimiterTest() throws RateLimiterException {
+        RateLimiter rateLimiter = new RateLimiter();
+        int count = 100;
+        while (count-- > 0) {
+            rateLimiter.limit("app1", "/v1/order");
         }
     }
 

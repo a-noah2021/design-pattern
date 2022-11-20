@@ -1,7 +1,6 @@
 package com.noah2021.ratelimiter.alg;
 
-import com.noah2021.ratelimiter.error.RateLimiterException;
-import lombok.extern.slf4j.Slf4j;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
 
 /**
  * @program: design-pattern

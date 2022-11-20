@@ -1,6 +1,6 @@
 package com.noah2021.ratelimiter.rule.parse;
 
-import com.noah2021.ratelimiter.rule.RuleConfig;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
 
 import java.io.InputStream;
 

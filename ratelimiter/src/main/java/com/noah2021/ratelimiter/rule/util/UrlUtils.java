@@ -1,7 +1,7 @@
 package com.noah2021.ratelimiter.rule.util;
 
-import com.noah2021.ratelimiter.error.EmRateLimiterError;
-import com.noah2021.ratelimiter.error.RateLimiterException;
+import com.noah2021.ratelimiter.exception.EmRateLimiterException;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.MalformedURLException;
@@ -32,7 +32,7 @@ public class UrlUtils {
         }
 
         if (!urlPath.startsWith("/")) {
-            throw new RateLimiterException(EmRateLimiterError.INVALID_URL, "UrlParser tokenize error, invalid urls: " + urlPath);
+            throw new RateLimiterException(EmRateLimiterException.INVALID_URL, "UrlParser tokenize error, invalid urls: " + urlPath);
         }
 
         String[] dirs = urlPath.split("/");
@@ -40,7 +40,7 @@ public class UrlUtils {
         for (int i = 0; i < dirs.length; ++i) {
             if ((dirs[i].contains(".") || dirs[i].contains("?") || dirs[i].contains("*"))
                     && (!dirs[i].startsWith("{") || !dirs[i].endsWith("}"))) {
-                throw new RateLimiterException(EmRateLimiterError.INVALID_URL, "UrlParser tokenize error, invalid urls: " + urlPath);
+                throw new RateLimiterException(EmRateLimiterException.INVALID_URL, "UrlParser tokenize error, invalid urls: " + urlPath);
             }
 
             if (!StringUtils.isEmpty(dirs[i])) {
@@ -69,7 +69,7 @@ public class UrlUtils {
         try {
             urlObj = new URI(url);
         } catch (URISyntaxException e) {
-            throw  new RateLimiterException(EmRateLimiterError.INVALID_URL, "Get url path error: " + url);
+            throw new RateLimiterException(EmRateLimiterException.INVALID_URL, "Get url path error: " + url);
         }
 
         String path = urlObj.getPath();

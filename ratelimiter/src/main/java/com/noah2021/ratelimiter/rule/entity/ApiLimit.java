@@ -1,4 +1,4 @@
-package com.noah2021.ratelimiter.rule;
+package com.noah2021.ratelimiter.rule.entity;
 
 import lombok.Data;
 

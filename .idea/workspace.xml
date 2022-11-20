@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":white_check_mark: 修改测试用例">
+    <list default="true" id="4857d88e-8e09-4013-ac6d-6aa88cb5b5bf" name="Default Changelist" comment=":bookmark: 修改测试用例参数">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/RateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/RateLimiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/FixedTimeWindowRateLimiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/RateLimitAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/alg/RateLimitAlg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/error/CommonError.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/exception/CommonException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/error/EmRateLimiterError.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/exception/EmRateLimiterException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/error/RateLimiterException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/exception/RateLimiterException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/ApiLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/entity/ApiLimit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppRuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/entity/AppRuleConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/AppUrlRateLimitRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/handle/AppUrlRateLimitRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RateLimiterRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/handle/RateLimiterRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/RuleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/entity/RuleConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/UrlRateLimitRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/handle/UrlRateLimitRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/JsonRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/JsonRuleConfigParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/RuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/RuleConfigParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YamlRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YamlRuleConfigParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/YmlRuleConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/parse/PropertiesRuleConfigParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/FileRuleConfigSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/load/FileRuleConfigSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/source/RuleConfigSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/load/RuleConfigSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/util/UrlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/main/java/com/noah2021/ratelimiter/rule/util/UrlUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/src/test/java/RateLimiterAlgTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimiter/target/classes/com/noah2021/ratelimiter/alg/LeakyBucketLimiter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,6 +291,7 @@
       <workItem from="1665236036470" duration="2668000" />
       <workItem from="1665318881045" duration="441000" />
       <workItem from="1665326039427" duration="3634000" />
+      <workItem from="1668933224525" duration="5838000" />
     </task>
     <task id="LOCAL-00001" summary=":sparkles:搭建限流基础框架">
       <created>1665236234122</created>

@@ -1,7 +1,10 @@
-package com.noah2021.ratelimiter.rule;
+package com.noah2021.ratelimiter.rule.handle;
 
-import com.noah2021.ratelimiter.error.EmRateLimiterError;
-import com.noah2021.ratelimiter.error.RateLimiterException;
+import com.noah2021.ratelimiter.exception.EmRateLimiterException;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
+import com.noah2021.ratelimiter.rule.entity.ApiLimit;
+import com.noah2021.ratelimiter.rule.entity.AppRuleConfig;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
@@ -40,7 +43,7 @@ public class UrlRateLimitRule implements RateLimiterRule{
                 addLimits(appId, appRuleConfig.getLimits());
             }
         } catch (RateLimiterException e) {
-            throw new RateLimiterException(EmRateLimiterError.CONFIGURATION_RESOLVE_ERR,"rule configuration is invalid: "+e);
+            throw new RateLimiterException(EmRateLimiterException.CONFIGURATION_RESOLVE_ERR,"rule configuration is invalid: "+e);
         }
     }
 
@@ -100,7 +103,7 @@ public class UrlRateLimitRule implements RateLimiterRule{
                     appUrlRateLimitRule.addLimitInfo(apiLimit);
                 }
             } catch (RateLimiterException e) {
-                throw new RateLimiterException(EmRateLimiterError.CONFIGURATION_RESOLVE_ERR,"rule configuration is invalid: "+e);
+                throw new RateLimiterException(EmRateLimiterException.CONFIGURATION_RESOLVE_ERR,"rule configuration is invalid: "+e);
             }
         }
         limitRules = newLimitRules;

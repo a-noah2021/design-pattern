@@ -1,10 +1,10 @@
-package com.noah2021.ratelimiter.rule.source;
+package com.noah2021.ratelimiter.rule.load;
 
-import com.noah2021.ratelimiter.rule.RuleConfig;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
 import com.noah2021.ratelimiter.rule.parse.JsonRuleConfigParser;
+import com.noah2021.ratelimiter.rule.parse.PropertiesRuleConfigParser;
 import com.noah2021.ratelimiter.rule.parse.RuleConfigParser;
 import com.noah2021.ratelimiter.rule.parse.YamlRuleConfigParser;
-import com.noah2021.ratelimiter.rule.parse.YmlRuleConfigParser;
 import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +31,7 @@ public class FileRuleConfigSource implements RuleConfigSource {
 
     static {
         PARSER_MAP.put(YAML_EXTENSION, new YamlRuleConfigParser());
-        PARSER_MAP.put(YML_EXTENSION, new YmlRuleConfigParser());
+        PARSER_MAP.put(YML_EXTENSION, new PropertiesRuleConfigParser());
         PARSER_MAP.put(JSON_EXTENSION, new JsonRuleConfigParser());
     }
 

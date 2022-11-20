@@ -2,16 +2,15 @@ package com.noah2021.ratelimiter;
 
 import com.noah2021.ratelimiter.alg.FixedTimeWindowRateLimiter;
 import com.noah2021.ratelimiter.alg.RateLimitAlg;
-import com.noah2021.ratelimiter.error.RateLimiterException;
-import com.noah2021.ratelimiter.rule.ApiLimit;
-import com.noah2021.ratelimiter.rule.RateLimiterRule;
-import com.noah2021.ratelimiter.rule.RuleConfig;
-import com.noah2021.ratelimiter.rule.UrlRateLimitRule;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
+import com.noah2021.ratelimiter.rule.entity.ApiLimit;
+import com.noah2021.ratelimiter.rule.handle.RateLimiterRule;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
+import com.noah2021.ratelimiter.rule.handle.UrlRateLimitRule;
+import com.noah2021.ratelimiter.rule.load.FileRuleConfigSource;
+import com.noah2021.ratelimiter.rule.load.RuleConfigSource;
 import lombok.extern.slf4j.Slf4j;
-import org.yaml.snakeyaml.Yaml;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -28,24 +27,8 @@ public class RateLimiter {
     private RateLimiterRule rule;
 
     public RateLimiter() throws RateLimiterException {
-        // 读取配置文件ratelimiter-rule.yaml然后封装进RuleConfig
-        InputStream in = null;
-        RuleConfig ruleConfig = null;
-        try {
-            in = this.getClass().getResourceAsStream("/ratelimiter-rule.yaml");
-            if (in != null) {
-                Yaml yaml = new Yaml();
-                ruleConfig = yaml.loadAs(in, RuleConfig.class);
-            }
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    log.error("close file error:{}", e);
-                }
-            }
-        }
+        RuleConfigSource ruleConfigSource = new FileRuleConfigSource();
+        RuleConfig ruleConfig = ruleConfigSource.load();
         //将限流规则构建成支持快速查找的数据结构RateLimitRule
         this.rule = new UrlRateLimitRule(ruleConfig);
     }

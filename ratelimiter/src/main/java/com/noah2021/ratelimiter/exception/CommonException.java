@@ -1,4 +1,4 @@
-package com.noah2021.ratelimiter.error;
+package com.noah2021.ratelimiter.exception;
 
 /**
  * @program: design-pattern
@@ -6,12 +6,12 @@ package com.noah2021.ratelimiter.error;
  * @author: noah2021
  * @date: 2022-10-08 00:19
  **/
-public interface CommonError {
+public interface CommonException {
 
     int getErrCode();
 
     String getErrMsg();
 
-    CommonError setErrMsg(String errMsg);
+    CommonException setErrMsg(String errMsg);
 
 }

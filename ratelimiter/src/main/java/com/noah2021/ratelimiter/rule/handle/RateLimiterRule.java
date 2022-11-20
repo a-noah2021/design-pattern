@@ -1,6 +1,8 @@
-package com.noah2021.ratelimiter.rule;
+package com.noah2021.ratelimiter.rule.handle;
 
-import com.noah2021.ratelimiter.error.RateLimiterException;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
+import com.noah2021.ratelimiter.rule.entity.ApiLimit;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
 
 import java.util.List;
 
@@ -14,39 +16,26 @@ public interface RateLimiterRule {
 
     /**
      * get limit info of one url.
-     * @param appId
-     * @param api
-     * @return
-     * @throws RateLimiterException
      */
     ApiLimit getLimit(String appId, String api) throws RateLimiterException;
 
     /**
      * add one limit for one app.
-     * @param appId
-     * @param apiLimit
-     * @throws RateLimiterException
      */
     void addLimit(String appId, ApiLimit apiLimit) throws RateLimiterException;
 
     /**
      * add limits for one app.
-     * @param limits
-     * @throws RateLimiterException
      */
     void addLimits(String appId, List<ApiLimit> limits) throws RateLimiterException;
 
     /**
      * override old rule.
-     * @param ruleConfig
-     * @throws RateLimiterException
      */
     void rebuildRule(RuleConfig ruleConfig) throws RateLimiterException;
 
     /**
      * add rule into the existing rule.
-     * @param ruleConfig
-     * @throws RateLimiterException
      */
     void addRule(RuleConfig ruleConfig) throws RateLimiterException;
 }

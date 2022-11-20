@@ -1,6 +1,6 @@
-package com.noah2021.ratelimiter.rule.source;
+package com.noah2021.ratelimiter.rule.load;
 
-import com.noah2021.ratelimiter.rule.RuleConfig;
+import com.noah2021.ratelimiter.rule.entity.RuleConfig;
 
 /**
  * @program: design-pattern

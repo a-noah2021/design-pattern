@@ -1,8 +1,8 @@
 package com.noah2021.ratelimiter.alg;
 
 import com.google.common.base.Stopwatch;
-import com.noah2021.ratelimiter.error.EmRateLimiterError;
-import com.noah2021.ratelimiter.error.RateLimiterException;
+import com.noah2021.ratelimiter.exception.EmRateLimiterException;
+import com.noah2021.ratelimiter.exception.RateLimiterException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -54,10 +54,10 @@ public class FixedTimeWindowRateLimiter implements RateLimitAlg {
                     lock.unlock();
                 }
             } else {
-                throw new RateLimiterException(EmRateLimiterError.INTERNAL_ERR, "tryAcquire() wait lock too long:" + TRY_LOCK_TIMEOUT + "ms");
+                throw new RateLimiterException(EmRateLimiterException.INTERNAL_ERR, "tryAcquire() wait lock too long:" + TRY_LOCK_TIMEOUT + "ms");
             }
         } catch (InterruptedException e) {
-            throw new RateLimiterException(EmRateLimiterError.INTERNAL_ERR, "tryAcquire() is interrupted by lock-time-out.");
+            throw new RateLimiterException(EmRateLimiterException.INTERNAL_ERR, "tryAcquire() is interrupted by lock-time-out.");
         }
     }
 }
